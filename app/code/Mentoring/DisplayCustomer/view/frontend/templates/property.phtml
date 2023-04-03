@@ -1,0 +1,12 @@
+<?php
+
+use Mentoring\DisplayCustomer\Block\DisplayProparty;
+
+/** @var DisplayProparty $block */
+?>
+<?php foreach ($block->getProperties() as $propertyValue) : ?>
+    <div class="Test" x-data="{open: false}">
+        <button x-on:click="open = !open">show</button>
+        <h1 x-show="open" x-cloak><?= $propertyValue ?></h1>
+    </div>
+<?php endforeach ?>

@@ -2,13 +2,19 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceContainer name="main.content">
-            <block class="Mentoring\DisplayCustomer\Block\DisplayCustomer" name="dispaly_customer" template="Mentoring_DisplayCustomer::customer.phtml">
+        <block class="Mentoring\DisplayCustomer\Block\DisplayCustomer" name="display_customer" template="Mentoring_DisplayCustomer::customer.phtml">
+            <block name="customer_components" template="Mentoring_DisplayCustomer::customer-components.phtml" />
+            <block class="Mentoring\DisplayCustomer\Block\DisplayProperty" name="customer_property" template="Mentoring_DisplayCustomer::property.phtml">
                 <arguments>
                     <argument name="data" xsi:type="array">
-                        <item name="klucz" xsi:type="string">wartosc</item>
+                        <item name="properties" xsi:type="array">
+                            <item name="lastname" xsi:type="string">lastname</item>
+                            <item name="email" xsi:type="string">email</item>
+                        </item>
                     </argument>
                 </arguments>
             </block>
+        </block>
         </referenceContainer>
     </body>
 </page>
